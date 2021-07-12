@@ -1,13 +1,11 @@
 import Navbar from "../components/navbar";
-
+import Boost from "../components/boost";
 
 function Home() {
   return (
     <div className="App">
       <Navbar />
-      <header className="App-header">
-        aloha
-      </header>
+      <Boost />
     </div>
   );
 }
