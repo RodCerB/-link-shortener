@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 :root {
   --clr-titles: #35323E;
@@ -18,6 +18,17 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+ul {
+  list-style-type: none;
+  margin-top: 1.312rem;
+}
+li{
+  margin-bottom: 0.5rem;
+}
+h2{
+  font-size:1rem;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -31,4 +42,9 @@ button{
   border-radius: 3.125rem;
   border: none;
   cursor: pointer;
+}
+
+.brandName{
+  color:var(--clr-titles);
+  font-size:2.25rem
 }

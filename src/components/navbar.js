@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
 
 const Navbar = () => {
-
     const isMobile = useMediaQuery({
         query: "(max-device-width: 765px)",
     });
@@ -13,7 +12,7 @@ const Navbar = () => {
 
     return (<Wrapper>
         <div>
-            <h1>Shortly</h1>
+            <h1 className='brandName'>Shortly</h1>
             <p>Features</p>
             <p>Pricing</p>
             <p>Resources</p>
@@ -35,11 +34,6 @@ const Wrapper = styled.section`
   grid-template-columns: repeat(2,auto);
   gap: 1rem;
   justify-content: space-between;
-
-  h1{
-      color:var(--clr-titles);
-      font-size:2.25rem
-  }
 
   div{
       display: grid;
