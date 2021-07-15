@@ -38,9 +38,9 @@ const Wrapper = styled.section`
   font-size: 1rem;  
   color: white;
   background-color: var(--clr-titles);
-  padding: 3.563rem 10rem 2.15rem 10rem;
   
   section{
+    padding-top: 2.5rem;
     display: grid;
     justify-items: center;
   }
@@ -63,10 +63,11 @@ const Wrapper = styled.section`
     display: grid;
     grid-template-columns: repeat(4,auto);
     gap: 1.5rem;
-    
   }
+  
   @media (min-width: 1090px) {
     section{
+        padding: 3.563rem 10rem 2.15rem 10rem;
         display: grid;
         grid-template-columns: repeat(3,auto);
         justify-content: space-between;

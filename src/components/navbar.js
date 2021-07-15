@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive'
 
 const Navbar = () => {
     const isMobile = useMediaQuery({
-        query: "(max-device-width: 765px)",
+        query: "(max-device-width: 768px)",
     });
 
     if(isMobile){
