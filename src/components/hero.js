@@ -16,7 +16,6 @@ const Hero = () => {
 }
 
 const Wrapper = styled.main`
-    
     section{
         display: flex;
         flex-direction: column-reverse;
@@ -41,12 +40,15 @@ const Wrapper = styled.main`
             padding-left: 9.813rem;
             display: grid;
             grid-template-columns: repeat(2, auto);
+            text-align: left;
         }
         h1{
             font-size: 5rem;
         }
         p{
             font-size: 1.5rem;
+            margin: 1rem 0;
+            margin-bottom: 2.75rem;
         }
     }
 `
