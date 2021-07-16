@@ -7,7 +7,7 @@ const Navbar = () => {
     });
 
     if(isMobile){
-        return <Wrapper><h1>Shortly</h1></Wrapper>
+        return <Wrapper><h1 className='brandName'>Shortly</h1></Wrapper>
     }
 
     return (<Wrapper>

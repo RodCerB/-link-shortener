@@ -84,8 +84,8 @@ const Wrapper = styled.section`
     .cards{
         text-align: left;
         width: 21.875rem;
-        .img{
-            left: 0;
+        img{
+            left: 32px;
         }
     }
     .h2{
