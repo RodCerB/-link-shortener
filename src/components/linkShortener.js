@@ -1,12 +1,20 @@
+import {useState, useEffect }from 'react'
 import styled from 'styled-components'
 import bgAPI from '../assets/background-api.svg'
 
 const LinkShortener = () => {
+    const [searchURL, setSearchURL] = useState('')
+    const [error, setError] = useState(false)
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        console.log(`${searchURL} é uma poha`)
+    }
 
     return <Wrapper>
         <div>
-            <form action="">
-                <input type="text" placeholder='Shorten a link here...'/>
+            <form action="" onSubmit={handleSubmit}>
+                <input type="text" placeholder='Shorten a link here...' value={searchURL} onChange={(e) => setSearchURL(e.target.value)}/>
                 <button>Shorten It!</button>
             </form>
         </div>
