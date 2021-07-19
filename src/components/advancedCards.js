@@ -38,7 +38,6 @@ const Wrapper = styled.section`
     
     .cardsContainer{
         position: relative;
-        
         display: grid;
         gap: 5.813rem;
         justify-items: center;
@@ -50,8 +49,9 @@ const Wrapper = styled.section`
         position: relative;
         background-color: white;
         width: 20.438rem;
-        padding: 4.688rem 1.625rem 2.625rem 2rem;
+        padding: 4.688rem 1.688rem 3.625rem 1.688rem;
         border-radius: 20px;
+        height: min-content;
 
         img{
             position: absolute;
@@ -79,14 +79,22 @@ const Wrapper = styled.section`
         grid-template-columns: repeat(3,auto);
         gap: 1.9rem;
         justify-content: center;
-        margin-top: 9.125rem;
+        margin-top: 6.3125rem;
     }
     .cards{
         text-align: left;
         width: 21.875rem;
+        padding: 4.688rem 1.625rem 2.625rem 2rem;
+
         img{
             left: 32px;
         }
+    }
+    .card2{
+        margin-top: 2.813rem;
+    }
+    .card3{
+        margin-top: 5.626rem;
     }
     .h2{
         font-size: 1.5rem;
@@ -96,6 +104,7 @@ const Wrapper = styled.section`
         font-weight: 400;
         letter-spacing: -0.03em;
         line-height: 25.6px;
+        margin: 1rem 0 0 0;
     }
     .blueLine{
         top: 50%;

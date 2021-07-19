@@ -27,6 +27,7 @@ const Wrapper = styled.main`
         color: var(--clr-titles);
         line-height: 119%;
         letter-spacing: -0.015em;
+        margin-top: 2.5rem;
     }
     p{
         font-size: 1.125rem;

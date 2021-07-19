@@ -25,7 +25,7 @@ const Wrapper = styled.section`
     p{
         font-size: 1rem;
         font-weight: 400;
-        width: 31.875rem;
+        max-width: 31.875rem;
         line-height: 30.06px;
         margin: 1rem auto;
     }
