@@ -1,22 +1,55 @@
 import {useState, useEffect }from 'react'
 import styled from 'styled-components'
 import bgAPI from '../assets/background-api.svg'
+import loadGif from '../assets/preloader.gif'
+import axios from 'axios'
 
 const LinkShortener = () => {
+    const urlBase = 'https://api.shrtco.de/v2/shorten?url='
     const [searchURL, setSearchURL] = useState('')
     const [error, setError] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        console.log(`${searchURL} é uma poha`)
+        fetchData(urlBase+searchURL)
+    }
+
+    async function fetchData (url) {
+        setLoading(true)
+        setError(false)
+        try{
+            const response = await axios.get(url)
+            const shortLink = await response.data.result.short_link
+            setSearchURL(shortLink)
+            setLoading(false)
+
+        } catch (err) {
+            setLoading(false)
+            setError(true)
+            setSearchURL('Shorten a link here...')
+            console.log(err)
+        }
     }
 
     return <Wrapper>
         <div>
-            <form action="" onSubmit={handleSubmit}>
-                <input type="text" placeholder='Shorten a link here...' value={searchURL} onChange={(e) => setSearchURL(e.target.value)}/>
+            <form action="" onSubmit={handleSubmit} >
+                <input 
+                    type="text" 
+                    placeholder='Shorten a link here...' 
+                    value={searchURL} 
+                    onChange={(e) => setSearchURL(e.target.value)}
+                    className={error ? 'inputError' : null}
+                    />
+                {loading
+                ?
+                <img src={loadGif} alt="loading" />
+                :
                 <button>Shorten It!</button>
+                }  
             </form>
+            {error && <p className='textError'>Please type a link</p>}
         </div>
     </Wrapper>
 }
@@ -36,6 +69,7 @@ const Wrapper = styled.main`
     }
     form{
         display: flex;
+        position: relative;
         flex-direction: column;
         gap: 1rem;
         
@@ -50,11 +84,27 @@ const Wrapper = styled.main`
         line-height: 24px;
         color: var(--clr-texts);
     }
+    .inputError{
+        border: 2px solid var(--clr-red);
+        color: var(--clr-red);
+    }
+    .textError{
+        position: absolute;
+        margin-top: 4px;
+        color: var(--clr-red);
+        font-size: 0.875rem;
+        line-height: 21px;
+    }
     button{
         border-radius: 10px;
         padding: 0.813rem 1.5rem;
         width: 100%;
         font-size:1.125rem;
+    }
+
+    img{
+       max-width:3.5rem;
+       margin: auto;
     }
 
     @media (min-width: 1090px) {
